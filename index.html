@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy 19th Birthday Syfi!</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+        /* Soft, warm animated background */
+        background: linear-gradient(-45deg, #fff7e6, #ffe4e1, #fff0f5, #f5f5dc);
+        background-size: 400% 400%;
+        animation: gradientBG 15s ease infinite;
+      }
+
+      @keyframes gradientBG {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      .heading-font {
+        font-family: "Playfair Display", serif;
+      }
+
+      .card-shadow {
+        box-shadow:
+          0 20px 40px rgba(0, 0, 0, 0.1),
+          0 0 20px rgba(212, 175, 55, 0.2);
+      }
+
+      .fade-in-up {
+        animation: fadeInUp 1s ease-out forwards;
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      @keyframes fadeInUp {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .delay-1 {
+        animation-delay: 0.3s;
+      }
+      .delay-2 {
+        animation-delay: 0.6s;
+      }
+      .delay-3 {
+        animation-delay: 0.9s;
+      }
+      .delay-4 {
+        animation-delay: 1.2s;
+      }
+    </style>
+  </head>
+  <body
+    class="min-h-screen flex items-center justify-center p-4 sm:p-8 relative overflow-x-hidden"
+  >
+    <!-- Interactive Button to re-trigger confetti -->
+    <button
+      onclick="fireConfetti()"
+      class="absolute top-4 right-4 bg-white/50 hover:bg-white/80 transition-colors px-4 py-2 rounded-full text-sm font-medium text-gray-700 shadow-sm backdrop-blur-sm z-50"
+    >
+      ✨ More Magic
+    </button>
+
+    <!-- Main Card Container -->
+    <div
+      class="max-w-2xl w-full bg-white rounded-3xl overflow-hidden card-shadow relative z-10 transition-transform duration-500 hover:scale-[1.01]"
+    >
+      <!-- Image Section -->
+      <div class="relative w-full border-b-4 border-yellow-200">
+        <img
+          src="birthday.jpeg"
+          alt="Happy Birthday Syfi"
+          class="w-full h-auto object-cover max-h-[600px] object-top"
+        />
+
+        <!-- Subtle gradient overlay to blend image into text -->
+        <div
+          class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white to-transparent"
+        ></div>
+      </div>
+
+      <!-- Text/Message Section -->
+      <div class="p-8 sm:p-12 text-center bg-white relative">
+        <!-- Decorative Quotes -->
+        <div
+          class="absolute top-4 left-8 text-4xl text-yellow-200 opacity-50 heading-font"
+        >
+          "
+        </div>
+        <div
+          class="absolute bottom-8 right-8 text-4xl text-yellow-200 opacity-50 heading-font"
+        >
+          "
+        </div>
+
+        <h1
+          class="heading-font text-3xl sm:text-4xl text-gray-800 font-bold mb-6 fade-in-up"
+        >
+          Happy 19th Birthday, <span class="text-yellow-600">Syfi!</span> 🎉✨
+        </h1>
+
+        <div
+          class="space-y-4 text-gray-600 text-base sm:text-lg leading-relaxed"
+        >
+          <p class="fade-in-up delay-1">
+            On this special day, I just want to say how magical it is to know
+            someone as amazing as you.
+          </p>
+
+          <p class="fade-in-up delay-2">
+            Your vibrant energy and beautiful spirit shine so brightly, and it's
+            truly captivating.
+          </p>
+
+          <p class="fade-in-up delay-3 italic text-gray-700">
+            Having you in my life brings so much joy and curiosity, kind of like
+            that exhilarating feeling of discovering a new feeling of love. 💫
+          </p>
+
+          <p class="fade-in-up delay-4 font-medium mt-6 text-gray-800">
+            I hope your day is filled with unforgettable moments and endless
+            smiles.<br />
+            <span
+              class="block mt-4 text-xl heading-font text-yellow-600 font-semibold"
+              >Cheers to you and the incredible year ahead! 🥳💕</span
+            >
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Script for Confetti Effect -->
+    <script>
+      function fireConfetti() {
+        var count = 200;
+        var defaults = {
+          origin: { y: 0.7 },
+          zIndex: 100,
+          colors: ["#FFE400", "#FFBD00", "#E89400", "#FFCA6C", "#FDFFB8"],
+        };
+
+        function fire(particleRatio, opts) {
+          confetti(
+            Object.assign({}, defaults, opts, {
+              particleCount: Math.floor(count * particleRatio),
+            }),
+          );
+        }
+
+        fire(0.25, { spread: 26, startVelocity: 55 });
+        fire(0.2, { spread: 60 });
+        fire(0.35, { spread: 100, decay: 0.91, scalar: 0.8 });
+        fire(0.1, { spread: 120, startVelocity: 25, decay: 0.92, scalar: 1.2 });
+        fire(0.1, { spread: 120, startVelocity: 45 });
+      }
+
+      // Fire confetti on load
+      window.onload = function () {
+        setTimeout(fireConfetti, 500);
+      };
+    </script>
+  </body>
+</html>
