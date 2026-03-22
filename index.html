@@ -74,6 +74,7 @@ body {
 .delay-2 {animation-delay: 0.6s;}
 .delay-3 {animation-delay: 0.9s;}
 .delay-4 {animation-delay: 1.2s;}
+.delay-5 {animation-delay: 1.5s;}
 
 /* Hearts */
 #hearts-container {
@@ -115,13 +116,9 @@ body {
 <!-- Hearts -->
 <div id="hearts-container"></div>
 
-<!-- Buttons -->
+<!-- Confetti Button -->
 <button onclick="fireConfetti()" class="absolute top-4 right-4 bg-white/60 px-4 py-2 rounded-full shadow">
 ✨ Magic
-</button>
-
-<button onclick="flipCard()" class="absolute top-16 right-4 bg-yellow-500 text-white px-4 py-2 rounded-full shadow">
-🔁 Flip
 </button>
 
 <!-- Card -->
@@ -154,6 +151,14 @@ body {
         <p class="fade-in-up delay-4 mt-4 text-gray-800 font-medium text-sm sm:text-base">
           Hope your day is full of happiness and love 🥳💕
         </p>
+
+        <!-- NEW FLIP BUTTON -->
+        <div class="fade-in-up delay-5 mt-6">
+          <button onclick="flipCard()" 
+          class="bg-gradient-to-r from-yellow-400 to-rose-400 text-white px-6 py-2 rounded-full shadow-lg hover:scale-105 transition">
+            💌 Open Surprise
+          </button>
+        </div>
 
       </div>
     </div>
