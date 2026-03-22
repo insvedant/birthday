@@ -111,27 +111,20 @@ body {
 </style>
 </head>
 
-<body class="min-h-screen flex items-center justify-center p-2 sm:p-6 relative overflow-x-hidden">
+<body class="min-h-screen flex flex-col items-center justify-center p-6 relative overflow-x-hidden">
 
 <!-- Hearts -->
 <div id="hearts-container"></div>
 
-<!-- Confetti Button -->
-<button onclick="fireConfetti()" class="absolute top-4 right-4 bg-white/60 px-4 py-2 rounded-full shadow">
-✨ Magic
-</button>
-
 <!-- Card -->
-<div class="flip-container">
+<div class="flip-container mb-6">
   <div class="flip-card" id="flipCard">
 
     <!-- FRONT -->
     <div class="flip-front bg-white rounded-3xl overflow-hidden card-shadow">
-
       <img src="birthday.jpeg" class="w-full h-[300px] sm:h-[450px] object-cover rounded-t-3xl">
 
       <div class="p-6 sm:p-8 text-center">
-
         <h1 class="heading-font text-2xl sm:text-3xl text-gray-800 mb-6 fade-in-up">
           Happy 19th Birthday, <span class="text-yellow-600">Syfi!</span> 🎉
         </h1>
@@ -151,26 +144,15 @@ body {
         <p class="fade-in-up delay-4 mt-4 text-gray-800 font-medium text-sm sm:text-base">
           Hope your day is full of happiness and love 🥳💕
         </p>
-
-        <!-- NEW FLIP BUTTON -->
-        <div class="fade-in-up delay-5 mt-6">
-          <button onclick="flipCard()" 
-          class="bg-gradient-to-r from-yellow-400 to-rose-400 text-white px-6 py-2 rounded-full shadow-lg hover:scale-105 transition">
-            💌 Open Surprise
-          </button>
-        </div>
-
       </div>
     </div>
 
     <!-- BACK -->
     <div class="flip-back flex items-center justify-center relative overflow-hidden">
-
       <div class="absolute inset-0 bg-gradient-to-br from-pink-100 via-yellow-50 to-rose-100 animate-pulse"></div>
       <div class="absolute inset-0" id="sparkles"></div>
 
       <div class="relative z-10 backdrop-blur-lg bg-white/40 border border-white/30 rounded-3xl p-8 sm:p-10 shadow-2xl max-w-md text-center">
-
         <h2 class="heading-font text-2xl sm:text-3xl text-rose-600 mb-4">
           💖 A Little Secret
         </h2>
@@ -181,23 +163,22 @@ body {
           without even realizing it 😊<br><br>
           And somehow… you became one of those people for me 💫
         </p>
-
-        <div class="mt-6 flex flex-col items-center gap-3">
-          <button onclick="fireConfetti()" 
-          class="bg-gradient-to-r from-yellow-400 to-rose-400 text-white px-6 py-2 rounded-full shadow-lg hover:scale-105 transition">
-            🎉 Celebrate You
-          </button>
-
-          <button onclick="flipCard()" 
-          class="text-sm text-gray-600 underline hover:text-black">
-            Go Back ↩
-          </button>
-        </div>
-
       </div>
     </div>
-
   </div>
+</div>
+
+<!-- Buttons BELOW card -->
+<div class="flex gap-4">
+  <button onclick="flipCard()" 
+    class="bg-gradient-to-r from-yellow-400 to-rose-400 text-white px-6 py-2 rounded-full shadow-lg hover:scale-105 transition">
+    💌 Open Surprise
+  </button>
+
+  <button onclick="fireConfetti()" 
+    class="bg-white/80 px-6 py-2 rounded-full shadow-lg hover:scale-105 transition">
+    ✨ Magic
+  </button>
 </div>
 
 <script>
