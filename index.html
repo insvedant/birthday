@@ -15,6 +15,7 @@ body {
   background: linear-gradient(-45deg, #fff7e6, #ffe4e1, #fff0f5, #f5f5dc);
   background-size: 400% 400%;
   animation: gradientBG 15s ease infinite;
+  margin: 0;
 }
 @keyframes gradientBG {
   0% {background-position: 0% 50%;}
@@ -29,26 +30,34 @@ body {
               0 0 20px rgba(212,175,55,0.2);
 }
 
-/* Flip */
-.flip-container { perspective: 1000px; }
+/* Flip Fix */
+.flip-container {
+  perspective: 1000px;
+  width: 100%;
+  max-width: 42rem;
+}
+
 .flip-card {
   width: 100%;
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
+  min-height: 650px;
   position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s;
 }
-.flip-card.flipped { transform: rotateY(180deg); }
+
+.flip-card.flipped {
+  transform: rotateY(180deg);
+}
 
 .flip-front, .flip-back {
   position: absolute;
-  width: 100%;
+  inset: 0;
   backface-visibility: hidden;
   border-radius: 1.5rem;
 }
 
 .flip-back {
   transform: rotateY(180deg);
-  height: 100%;
 }
 
 /* Animations */
@@ -94,14 +103,14 @@ body {
   animation: sparkle linear infinite;
 }
 @keyframes sparkle {
-  0% { transform: translateY(100vh) scale(0.5); opacity: 0; }
+  0% { transform: translateY(100vh); opacity: 0; }
   50% { opacity: 1; }
-  100% { transform: translateY(-10vh) scale(1); opacity: 0; }
+  100% { transform: translateY(-10vh); opacity: 0; }
 }
 </style>
 </head>
 
-<body class="min-h-screen flex items-center justify-center p-4 relative overflow-x-hidden">
+<body class="min-h-screen flex items-center justify-center p-2 sm:p-6 relative overflow-x-hidden">
 
 <!-- Hearts -->
 <div id="hearts-container"></div>
@@ -116,56 +125,52 @@ body {
 </button>
 
 <!-- Card -->
-<div class="flip-container max-w-2xl w-full">
+<div class="flip-container">
   <div class="flip-card" id="flipCard">
 
     <!-- FRONT -->
     <div class="flip-front bg-white rounded-3xl overflow-hidden card-shadow">
 
-      <img src="birthday.jpeg" class="w-full max-h-[500px] object-cover">
+      <img src="birthday.jpeg" class="w-full h-[300px] sm:h-[450px] object-cover rounded-t-3xl">
 
-      <div class="p-8 text-center">
+      <div class="p-6 sm:p-8 text-center">
 
-        <h1 class="heading-font text-3xl text-gray-800 mb-6 fade-in-up">
+        <h1 class="heading-font text-2xl sm:text-3xl text-gray-800 mb-6 fade-in-up">
           Happy 19th Birthday, <span class="text-yellow-600">Syfi!</span> 🎉
         </h1>
 
-        <p class="fade-in-up delay-1 text-gray-600">
+        <p class="fade-in-up delay-1 text-gray-600 text-sm sm:text-base">
           On this special day, I just want to say how magical it is to know you.
         </p>
 
-        <p class="fade-in-up delay-2 text-gray-600">
+        <p class="fade-in-up delay-2 text-gray-600 text-sm sm:text-base">
           Your energy and smile make everything brighter.
         </p>
 
-        <p class="fade-in-up delay-3 italic text-gray-700">
+        <p class="fade-in-up delay-3 italic text-gray-700 text-sm sm:text-base">
           Honestly… you feel like a beautiful surprise in my life. 💫
         </p>
 
-        <p class="fade-in-up delay-4 mt-4 text-gray-800 font-medium">
+        <p class="fade-in-up delay-4 mt-4 text-gray-800 font-medium text-sm sm:text-base">
           Hope your day is full of happiness and love 🥳💕
         </p>
 
       </div>
     </div>
 
-    <!-- BACK (UPGRADED DESIGN) -->
+    <!-- BACK -->
     <div class="flip-back flex items-center justify-center relative overflow-hidden">
 
-      <!-- Gradient -->
       <div class="absolute inset-0 bg-gradient-to-br from-pink-100 via-yellow-50 to-rose-100 animate-pulse"></div>
-
-      <!-- Sparkles -->
       <div class="absolute inset-0" id="sparkles"></div>
 
-      <!-- Glass Card -->
-      <div class="relative z-10 backdrop-blur-lg bg-white/40 border border-white/30 rounded-3xl p-10 shadow-2xl max-w-md text-center">
+      <div class="relative z-10 backdrop-blur-lg bg-white/40 border border-white/30 rounded-3xl p-8 sm:p-10 shadow-2xl max-w-md text-center">
 
-        <h2 class="heading-font text-3xl text-rose-600 mb-4">
+        <h2 class="heading-font text-2xl sm:text-3xl text-rose-600 mb-4">
           💖 A Little Secret
         </h2>
 
-        <p class="text-gray-700 text-lg leading-relaxed">
+        <p class="text-gray-700 text-base sm:text-lg leading-relaxed">
           Not everything can be said directly…<br><br>
           But some people quietly become special…<br>
           without even realizing it 😊<br><br>
